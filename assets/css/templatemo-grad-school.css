@@ -1,7 +1,7 @@
 /*
     TemplateMo 557 Grad School
     https://templatemo.com/tm-557-grad-school
-    RTL Updated Version 2026
+    RTL Cleaned Version 2026
 */
 
 @import url(fontawesome.css);
@@ -10,18 +10,204 @@
 body {
   font-family: 'Montserrat', sans-serif;
   direction: rtl;
-  /* إجبار المتصفح على بدء التنسيق من اليمين لليسار */
   text-align: right;
 }
 
-/* ==========================================================================
-   About Us Section (من نحن - رؤيتنا - رسالتنا)
-   ========================================================================== */
+/* Basic Tags */
+a {
+  color: #3CF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-section.about-us {
-  background-color: #172238;
-  padding: 120px 0px 60px 0px;
+a:hover {
+  color: #FC3;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+/* Headings & Buttons */
+.section-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-heading h2 {
+  margin-top: 100px;
   position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 15px 20px;
+  border: 2px solid rgba(250, 250, 250, 0.1);
+}
+
+.section-heading h2:before {
+  width: 1px;
+  height: 100px;
+  background-color: rgba(250, 250, 250, 0.1);
+  position: absolute;
+  top: -102px;
+  content: '';
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.main-button a,
+section.coming-soon form button,
+section.contact form button {
+  background-color: #f5a425;
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  padding: 12px 20px;
+  display: inline-block;
+  outline: none;
+  border: none;
+}
+
+/* Header & Navigation */
+.main-header {
+  background-color: rgba(22, 34, 57, 0.95);
+  height: 80px;
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  top: 0;
+}
+
+.main-header .logo {
+  float: right;
+  line-height: 80px;
+  padding-right: 60px;
+}
+
+.main-header .logo a {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+}
+
+.main-header .logo a em {
+  font-style: normal;
+  color: #f5a425;
+}
+
+.main-menu {
+  float: left;
+  padding-left: 60px;
+}
+
+.main-menu li {
+  display: inline-block;
+  line-height: 79px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.main-menu li:first-child {
+  margin-right: 0;
+}
+
+.main-menu li a {
+  padding: 10px 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: all 0.5s;
+}
+
+.main-nav li:hover a,
+.main-nav li.active a {
+  border: 2px solid #f5a425;
+}
+
+.main-menu li.has-submenu a:after {
+  content: '\f107';
+  font-family: "FontAwesome";
+  margin-right: 5px;
+}
+
+.main-menu li .sub-menu {
+  position: absolute;
+  width: 160px;
+  background-color: #18233a;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  right: 0;
+}
+
+.main-menu li:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-menu li .sub-menu li {
+  display: block;
+  line-height: 20px;
+  margin-right: 0;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #121b2f;
+}
+
+.main-menu li .sub-menu li:first-child {
+  padding-top: 15px;
+}
+
+.main-menu li .sub-menu li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.main-menu li .sub-menu li a {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 15px;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.main-menu li .sub-menu li a:hover {
+  color: #f5a425;
+}
+
+a.menu-link {
+  display: none;
+}
+
+/* Sections Base */
+section.about-us,
+section.coming-soon,
+section.video {
+  background-color: #172238;
+  padding: 120px 0 60px 0;
+  position: relative;
+}
+
+section.coming-soon,
+section.video {
+  padding: 120px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 section.about-us .col-lg-4 {
@@ -61,11 +247,8 @@ section.about-us .col-lg-4 {
   align-items: center;
 }
 
-/* الأيقونات العربية */
 .about-content h4 i {
   margin-left: 10px;
-  /* المسافة لليسار لأن النص يبدأ من اليمين */
-  margin-right: 0;
   font-size: 22px;
   color: #f5a425;
   transition: all 0.3s ease;
@@ -79,307 +262,9 @@ section.about-us .col-lg-4 {
   color: #eff;
   font-size: 14px;
   line-height: 26px;
-  margin-bottom: 0px;
 }
 
-@media screen and (max-width: 992px) {
-  section.about-us {
-    padding: 80px 0px 40px 0px;
-  }
-
-  .about-content {
-    min-height: auto;
-  }
-}
-
-/* Basic */
-a {
-  color: #3CF;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #FC3;
-  text-decoration: none;
-}
-
-ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
-
-p {
-  font-size: 13px;
-  line-height: 22px;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.section-heading h2:before {
-  width: 1px;
-  height: 100px;
-  background-color: rgba(250, 250, 250, 0.1);
-  position: absolute;
-  top: -102px;
-  content: '';
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.section-heading h2 {
-  margin-top: 100px;
-  position: relative;
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  padding: 15px 20px;
-  border: 2px solid rgba(250, 250, 250, 0.1);
-}
-
-/* Buttons */
-.main-button a {
-  background-color: #f5a425;
-  color: #fff;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  padding: 12px 20px;
-  display: inline-block;
-  outline: none;
-}
-
-a.menu-link {
-  display: none;
-}
-
-@media screen and (max-width: 950px) {
-  a.menu-link {
-    float: left;
-    /* زر القائمة من اليسار في الجوال لتوازن الهيدر */
-    display: block;
-    font-size: 36px;
-    color: #fff;
-    padding-left: 30px;
-    padding-top: 15px;
-  }
-
-  nav[role="navigation"] {
-    clear: both;
-    transition: all 0.3s ease-out;
-  }
-
-  .js nav[role="navigation"] {
-    overflow: hidden;
-    max-height: 0;
-  }
-
-  nav[role="navigation"].active {
-    max-height: 20em;
-    height: 20em;
-    overflow-y: scroll;
-  }
-
-  nav[role="navigation"] ul {
-    top: 0;
-    width: 100%;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid rgba(250, 250, 250, 0.25);
-    background-color: rgba(22, 34, 57, 0.99);
-  }
-
-  nav[role="navigation"] li a {
-    display: block;
-    padding: 15px 0px;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.25);
-    text-align: center;
-    color: #fff;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.5;
-  }
-
-  nav[role="navigation"] li:hover a,
-  nav[role="navigation"] li.active a {
-    color: #f5a425;
-  }
-}
-
-@media screen and (min-width: 951px) {
-  .js nav[role="navigation"] {
-    max-height: none;
-  }
-
-  nav[role="navigation"] li {
-    display: inline-block;
-    margin: 0 0.25em;
-  }
-
-  nav[role="navigation"] li a {
-    border: 0;
-  }
-}
-
-/* Header (تعديل اتجاهات الشعار والقائمة الأساسية) */
-@media screen and (max-width: 1050px) {
-  .main-header .logo {
-    padding-right: 30px !important;
-    padding-left: 0 !important;
-  }
-
-  .main-menu {
-    padding-left: 30px !important;
-    padding-right: 0 !important;
-  }
-
-  .main-menu li {
-    margin-right: 5px !important;
-    margin-left: 0 !important;
-  }
-}
-
-.main-header {
-  background-color: rgba(22, 34, 57, 0.95);
-  height: 80px;
-  position: fixed;
-  z-index: 12;
-  width: 100%;
-  top: 0;
-}
-
-.main-header .logo {
-  float: right;
-  /* اللوجو على اليمين برمجياً في العربية */
-  line-height: 80px;
-  padding-right: 60px;
-  padding-left: 0;
-}
-
-.main-header .logo a {
-  font-size: 36px;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #fff;
-}
-
-.main-header .logo a em {
-  font-style: normal;
-  color: #f5a425;
-}
-
-.main-menu {
-  float: left;
-  /* أزرار التنقل على اليسار */
-  padding-left: 60px;
-  padding-right: 0;
-}
-
-.main-menu li {
-  display: inline-block;
-  line-height: 79px;
-  margin-right: 15px;
-  margin-left: 0;
-  position: relative;
-}
-
-.main-menu li:first-child {
-  margin-right: 0px;
-}
-
-.main-menu li a {
-  padding: 10px 15px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  color: #fff;
-  border: 2px solid transparent;
-  transition: all 0.5s;
-}
-
-.main-menu li.has-submenu a:after {
-  content: '\f107';
-  font-family: "FontAwesome";
-  margin-right: 5px;
-  margin-left: 0;
-}
-
-.main-menu li.has-submenu ul li a:after {
-  display: none;
-}
-
-.main-menu li .sub-menu {
-  position: absolute;
-  width: 160px;
-  background-color: #18233a;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
-  right: 0;
-  /* فتح القائمة المنسدلة بمحاذاة اليمين */
-}
-
-.main-menu li:hover .sub-menu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.main-menu li .sub-menu li {
-  display: block;
-  line-height: 20px;
-  margin-right: 0px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #121b2f;
-}
-
-.main-menu li .sub-menu li:first-child {
-  padding-top: 15px;
-}
-
-.main-menu li .sub-menu li:last-child {
-  margin-bottom: 0px;
-  border-bottom: none;
-}
-
-.main-menu li .sub-menu li a {
-  font-size: 12px;
-  font-weight: 500;
-  padding: 0px 15px;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: all 0.5s;
-}
-
-.main-menu li .sub-menu li a:hover {
-  color: #f5a425;
-  border: none;
-}
-
-.main-nav li:hover a,
-.main-nav li.active a {
-  border: 2px solid #f5a425;
-}
-
-@media (max-width: 950px) {
-
-  .main-nav li:hover a,
-  .main-nav li.active a {
-    border: 2px solid transparent;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.25);
-  }
-}
-
-/* Slider */
+/* Main Banner */
 .main-banner {
   position: relative;
   max-height: 100%;
@@ -418,17 +303,15 @@ a.menu-link {
   transform: translate(-50%, -50%);
 }
 
-.main-banner .caption p {
+.main-banner .caption p,
+.main-banner .caption h6 {
   color: #fff;
   font-size: 18px;
 }
 
 .main-banner .caption h6 {
-  margin-top: 0px;
-  font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -448,27 +331,19 @@ a.menu-link {
   font-weight: 900;
 }
 
-@media screen and (max-width: 1180px) {
-  .main-banner .caption h2 {
-    font-size: 58px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .main-banner .caption h2 {
-    font-size: 36px;
-  }
-}
-
 /* Features */
+section.features {
+  margin-bottom: 0;
+}
+
 section.features .col-4 {
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .features-post {
   position: relative;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .features-thumb {
@@ -484,11 +359,11 @@ section.features .col-4 {
   position: absolute;
   bottom: 0;
   right: 0;
-  /* البدء من اليمين للمحتوى الداخلي للبطاقات الكبيرة */
   width: 100%;
   background-color: #0c1228;
   color: #fff;
   padding: 40px;
+  transition: all 0.3s ease;
 }
 
 .features-content:hover {
@@ -502,18 +377,12 @@ section.features .col-4 {
   font-weight: 700;
   color: #fff;
   letter-spacing: 1px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .features-content h4 i {
   margin-left: 15px;
-  /* دفع النص لليسار بدلاً من اليمين */
-  margin-right: 0;
   font-size: 24px;
-}
-
-.features-content p {
-  margin-bottom: 0px;
 }
 
 .features-content a {
@@ -534,47 +403,9 @@ section.features .col-4 {
 .second-features,
 .third-features {
   border-right: 1px solid rgba(250, 250, 250, 0.1);
-  /* تحويل التجزئة الجانبية إلى اليمين */
-  border-left: none;
 }
 
-.content-hide {
-  margin-top: 15px;
-  display: none;
-}
-
-.content-hide p {
-  color: #fff;
-}
-
-@media screen and (max-width: 767px) {
-  .features-content {
-    padding: 15px;
-  }
-
-  .features-content h4 i {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .features-content h4 {
-    font-size: 14px;
-  }
-
-  .features-content p {
-    display: none;
-  }
-
-  .features-content p.hidden-sm {
-    display: block;
-  }
-}
-
-/* Why Choosing Us (تعديل قسم المستويات الدراسية) */
-/* ==========================================================================
-   Why Choosing Us - قسم المستويات الدراسية المعدل بالكامل
-   ========================================================================== */
-
+/* Why Choosing Us */
 section.why-us {
   background-image: url(../images/choosing-bg.jpg);
   background-color: #172238;
@@ -583,28 +414,19 @@ section.why-us {
   padding-bottom: 100px;
 }
 
-#tabs {
-  text-align: center;
-}
-
-/* حل مشكلة المربعات الصغيرة عبر تحويلها إلى Flexbox لتترتب برمجياً بشكل صحيح */
 #tabs ul {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;
   direction: rtl;
-  /* إجبار المربعات على البدء من اليمين */
 }
 
 #tabs ul li {
   flex: 1;
   display: block;
-  font-weight: 400;
   font-size: 1.2em;
-  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -614,40 +436,31 @@ section.why-us {
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
-  outline: 0;
   padding-bottom: 30px;
   color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
   position: relative;
 }
 
-/* ضبط موضع النقطة/المربع الصغير أسفل التبويب النشط */
-#tabs ul li a:after {
+#tabs ul li a:after,
+#tabs ul li a:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   transition: all 0.3s;
+}
+
+#tabs ul li a:after {
   width: 10px;
   height: 10px;
   background-color: #fff;
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  /* لضمان توسط المربع تماماً في النسخة العربية */
   bottom: 0;
 }
 
-/* ضبط الدائرة المحيطة بالمربع الصغير */
 #tabs ul li a:before {
-  transition: all 0.3s;
   width: 25px;
   height: 25px;
   border: 2px solid transparent;
-  background-color: transparent;
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  /* لضمان التوسط الدقيق */
   bottom: -5px;
 }
 
@@ -674,7 +487,6 @@ section.why-us {
   margin-top: 60px;
   font-size: 32px;
   font-weight: 700;
-  letter-spacing: 1px;
   color: #fff;
   margin-bottom: 30px;
 }
@@ -690,44 +502,13 @@ section.why-us {
   text-align: right;
 }
 
-@media screen and (max-width: 767px) {
-  #tabs ul {
-    flex-direction: column;
-    /* تحويل المربعات فوق بعضها في الشاشات الصغيرة منعاً للانضغاط */
-  }
-
-  #tabs ul li {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .tabs-content {
-    text-align: center;
-  }
-}
-
 .tabs-content img {
   width: 100%;
   overflow: hidden;
   padding-left: 45px;
-  padding-right: 0px;
 }
 
-@media screen and (max-width: 767px) {
-  .tabs-content img {
-    padding-left: 0px;
-  }
-}
-
-/* Coming Soon */
-section.coming-soon {
-  background-image: url(../images/coming-soon-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #172238;
-  padding: 120px 0px;
-}
-
+/* Coming Soon & Counter */
 section.coming-soon .continer .counter div {
   display: inline-block;
 }
@@ -737,7 +518,6 @@ section.coming-soon .continer h4 {
   font-size: 30px;
   color: #fff;
   font-weight: 800;
-  letter-spacing: 0.5px;
   line-height: 40px;
   margin-bottom: 50px;
 }
@@ -747,90 +527,19 @@ section.coming-soon .continer h4 em {
   color: #f5a425;
 }
 
-@media screen and (max-width: 767px) {
-  section.coming-soon .continer h4 {
-    text-align: center;
-  }
-}
 
-section.coming-soon .continer .counter .days,
-section.coming-soon .continer .counter .hours,
-section.coming-soon .continer .counter .minutes,
-section.coming-soon .continer .counter .seconds {
-  width: 22%;
-  height: 140px;
-  float: right;
-  /* جعل مربعات العد التنازلي تبدأ وتصطف من اليمين */
-  text-align: center;
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #fff;
-  background-color: rgba(250, 250, 250, 0.1);
-}
-
-@media screen and (max-width: 992px) {
-
-  section.coming-soon .continer .counter .days,
-  section.coming-soon .continer .counter .hours,
-  section.coming-soon .continer .counter .minutes,
-  section.coming-soon .continer .counter .seconds {
-    font-size: 26px;
-  }
-
-  section.coming-soon .continer .counter .days .value,
-  section.coming-soon .continer .counter .hours .value,
-  section.coming-soon .continer .counter .minutes .value,
-  section.coming-soon .continer .counter .seconds .value {
-    margin-top: 40px !important;
-  }
-
-  section.coming-soon .continer .counter span {
-    font-size: 14px !important;
-  }
-}
-
-section.coming-soon .continer .counter .days,
-section.coming-soon .continer .counter .hours,
-section.coming-soon .continer .counter .minutes {
-  margin-left: 4%;
-  /* الهامش لليسار لتوزيع المسافات التناسبية للـ RTL */
-  margin-right: 0px;
-}
-
-section.coming-soon .continer .counter .days .value,
-section.coming-soon .continer .counter .hours .value,
-section.coming-soon .continer .counter .minutes .value,
-section.coming-soon .continer .counter .seconds .value {
-  margin-top: 15px;
-  display: block;
-  width: 100%;
-}
 
 section.coming-soon .continer .counter span {
   font-size: 18px;
   text-transform: uppercase;
   color: #f5a425;
   font-weight: 500;
-  letter-spacing: 1px;
-  margin-top: 0px;
+  margin-top: 0;
   display: block;
 }
 
 section.coming-soon .right-content {
   margin-right: 30px;
-  margin-left: 0;
-}
-
-@media screen and (max-width: 767px) {
-  section.coming-soon .right-content {
-    margin-top: 60px;
-    margin-right: 0px;
-  }
-}
-
-section.coming-soon .top-content {
-  margin-bottom: -8px;
 }
 
 section.coming-soon .top-content h6 {
@@ -847,43 +556,9 @@ section.coming-soon .top-content h6 em {
   font-weight: 600;
 }
 
-section.coming-soon form {
-  background-color: rgba(250, 250, 250, 0.1);
-  padding: 60px 40px;
-  width: 100%;
-  text-align: center;
-}
 
-section.coming-soon form input {
-  width: 100%;
-  height: 40px;
-  background-color: rgba(250, 250, 250, 0.1);
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 13px;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
 
-section.coming-soon form input:focus {
-  background-color: rgba(250, 250, 250, 0.1);
-  color: #fff;
-}
 
-section.coming-soon form button {
-  margin-top: 10px;
-  background-color: #f5a425;
-  color: #fff;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  padding: 12px 20px;
-  display: inline-block;
-  outline: none;
-  border: none;
-}
 
 /* Courses */
 section.courses {
@@ -891,7 +566,7 @@ section.courses {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #172238;
-  padding: 0px 30px 100px 30px;
+  padding: 0 30px 100px 30px;
 }
 
 section.courses .item img {
@@ -910,27 +585,21 @@ section.courses .item .down-content h4 {
   font-size: 16px;
   text-transform: uppercase;
   color: #1e1e1e;
-  letter-spacing: 0.5px;
   font-weight: 700;
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 20px;
-}
-
-section.courses .item .down-content p {
-  margin-bottom: 25px;
 }
 
 section.courses .item .down-content img {
   width: 40px;
   border: 2px solid #f5a425;
   border-radius: 50%;
-  text-align: right;
   display: inline-block;
 }
 
-section.courses .item .down-content .text-button-pay {
+section.courses .item .down-content .text-button-pay,
+section.courses .item .down-content .text-button-free {
   float: left;
-  /* زر الدفع إلى اليسار */
   display: inline-block;
   margin-top: -30px;
 }
@@ -938,13 +607,6 @@ section.courses .item .down-content .text-button-pay {
 section.courses .item .down-content .text-button-pay a {
   color: #f5a425;
   font-size: 13px;
-}
-
-section.courses .item .down-content .text-button-free {
-  float: left;
-  /* زر الدورة المجانية إلى اليسار */
-  display: inline-block;
-  margin-top: -30px;
 }
 
 section.courses .item .down-content .text-button-free a {
@@ -964,7 +626,7 @@ section.courses .owl-carousel button.owl-dot {
   width: 10px;
   height: 10px;
   background-color: #fff;
-  margin: 50px 10px 0px 10px;
+  margin: 50px 10px 0 10px;
   outline: none;
 }
 
@@ -972,60 +634,12 @@ section.courses .owl-carousel button.active {
   background-color: #f5a425;
 }
 
-/* Video */
-section.video {
-  background-image: url(../images/video-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #172238;
-  padding: 120px 0px;
-}
-
-section.video .left-content {
-  color: #fff;
-}
-
-section.video .left-content span {
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-section.video .left-content h4 {
-  margin-top: 20px;
-  font-size: 30px;
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  line-height: 40px;
-  margin-bottom: 20px;
-}
-
-section.video .left-content h4 em {
-  font-style: normal;
-  color: #f5a425;
-}
-
-section.video .left-content .main-button {
-  margin-top: 30px;
-}
-
+/* Video Items & Popups */
 .video-item {
   position: relative;
   width: 100%;
   max-width: 600px;
-  margin: 0px auto 0;
-}
-
-@media screen and (max-width: 767px) {
-  section.video .left-content {
-    margin-bottom: 45px;
-  }
-
-  section.video .first-item .first-content h4,
-  section.video .second-item .second-content h4 {
-    text-align: center;
-  }
+  margin: 0 auto;
 }
 
 .video-item figure {
@@ -1038,36 +652,29 @@ section.video .left-content .main-button {
   width: 100%;
 }
 
-.video-item figure a:before {
+.video-item figure a:before,
+.video-item figure a:after {
   content: '';
   position: absolute;
-  bottom: 10px;
   left: 15px;
-  /* زر تشغيل الفيديو في الزاوية اليسرى */
-  right: auto;
+  bottom: 10px;
+  z-index: 10;
+}
+
+.video-item figure a:before {
   width: 60px;
   height: 60px;
   margin-top: -32.5px;
   border-radius: 50%;
   background-color: #f5a425;
-  z-index: 10;
 }
 
 .video-item figure a:after {
-  content: '';
-  position: absolute;
   bottom: 27.5px;
   left: 38px;
-  /* ضبط موضع سهم مشغل الفيديو */
-  right: auto;
   margin-top: -12.5px;
   border: solid 13px transparent;
   border-left: solid 20px #fff;
-  z-index: 10;
-}
-
-.video-item figure a:hover:before {
-  background-color: #f5a425;
 }
 
 .video-item .video-caption {
@@ -1084,30 +691,27 @@ section.video .left-content .main-button {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
-/* Magnific Popup CSS */
-.mfp-bg {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1042;
-  overflow: hidden;
-  position: fixed;
-  background: #0b0b0b;
-  opacity: 0.8;
-}
-
+.mfp-bg,
 .mfp-wrap {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  fixed: position;
+  z-index: 1042;
+}
+
+.mfp-bg {
+  background: #0b0b0b;
+  opacity: 0.8;
+  position: fixed;
+}
+
+.mfp-wrap {
   z-index: 1043;
   position: fixed;
-  outline: none !important;
 }
 
 .mfp-container {
@@ -1134,7 +738,6 @@ section.video .left-content .main-button {
   vertical-align: middle;
   margin: 0 auto;
   text-align: right;
-  /* البوب أب يبدأ من اليمين */
   z-index: 1045;
 }
 
@@ -1144,70 +747,11 @@ section.video .left-content .main-button {
   line-height: 44px;
   position: absolute;
   left: 0;
-  /* زر الإغلاق على اليسار */
-  right: auto;
   text-decoration: none;
   text-align: center;
   opacity: 0.65;
   color: #FFF;
   font-size: 28px;
-}
-
-/* Contact */
-section.contact {
-  background-image: url(../images/contact-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #172238;
-  padding-bottom: 120px;
-}
-
-section.contact form {
-  background-color: rgba(250, 250, 250, 0.1);
-  padding: 30px;
-  width: 100%;
-}
-
-@media screen and (max-width: 767px) {
-  section.contact form {
-    margin-bottom: 30px;
-  }
-}
-
-section.contact form input,
-section.contact form textarea {
-  width: 100%;
-  background-color: rgba(250, 250, 250, 0.1);
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 13px;
-  margin-bottom: 30px;
-  letter-spacing: 0.5px;
-  text-align: right;
-  /* إجبار التكست بوكس على بدء الكتابة من اليمين */
-}
-
-section.contact form input {
-  height: 40px;
-}
-
-section.contact form textarea {
-  height: 220px;
-  max-height: 280px;
-  min-height: 220px;
-}
-
-section.contact form button {
-  background-color: #f5a425;
-  color: #fff;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  padding: 12px 20px;
-  display: inline-block;
-  border: none;
 }
 
 /* Footer */
@@ -1217,64 +761,19 @@ footer {
 }
 
 footer p {
-  margin-bottom: 0px;
-  padding: 25px 0px;
+  margin-bottom: 0;
+  padding: 25px 0;
   color: #fff;
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
-footer p a,
-footer p a:hover {
+footer p a {
   color: #f5a425;
 }
 
-@media screen and (max-width: 992px) {
-  .features {
-    background-color: #0c1228;
-  }
-
-  .features-content {
-    position: relative;
-  }
-
-  .features-post {
-    border-right: 0;
-    border-left: 0;
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .main-menu {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .main-header .logo {
-    line-height: 73px;
-  }
-
-  .main-menu li {
-    display: block;
-    line-height: 1;
-    margin-right: 0 !important;
-  }
-
-  .main-menu li .sub-menu {
-    opacity: 1;
-    visibility: visible;
-    position: static;
-    width: 100%;
-  }
-}
-
-/* ==========================================================================
-   تنسيق زر قسم "اختبر ميولك" الجديد
-   ========================================================================== */
-
-/* الحاوية لضمان المحاذاة جهة اليسار في الشاشات الكبيرة والتوسط في الجوال */
+/* Quiz Button */
 .quiz-btn-container {
   display: flex;
   justify-content: flex-start;
@@ -1286,29 +785,23 @@ footer p a:hover {
   color: #fff;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   font-weight: 700;
   padding: 15px 35px;
   border: 2px solid transparent;
   border-radius: 30px;
-  /* جعل حواف الزر دائرية بشكل عصري */
   outline: none;
   cursor: pointer;
   box-shadow: 0px 5px 15px rgba(245, 164, 37, 0.3);
-  /* ظل خفيف خلف الزر */
   transition: all 0.3s ease-in-out;
 }
 
-/* تأثيرات حركة الماوس فوق الزر (Hover) */
 .custom-quiz-btn:hover {
   background-color: transparent;
   color: #f5a425;
   border-color: #f5a425;
   box-shadow: 0px 8px 25px rgba(245, 164, 37, 0.5);
   transform: translateY(-3px);
-  /* رفعة خفيفة لأعلى عند التمرير */
 }
-
 
 .custom-quiz-btn i {
   margin-right: 8px;
@@ -1319,17 +812,7 @@ footer p a:hover {
   transform: translateX(-5px);
 }
 
-@media screen and (max-width: 767px) {
-  .quiz-btn-container {
-    justify-content: center;
-    margin-top: 30px;
-  }
-
-  .custom-quiz-btn {
-    width: 80%;
-  }
-}
-
+/* Motivation Section */
 .motivation-section {
   background: linear-gradient(135deg, #172238 0%, #0c1220 100%);
   padding: 80px 0;
@@ -1363,7 +846,6 @@ footer p a:hover {
   color: #f5a425;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
 .stat-card {
@@ -1398,19 +880,9 @@ footer p a:hover {
 .stat-title {
   color: #aaa;
   font-size: 16px;
-  margin-bottom: 0;
 }
 
-@media screen and (max-width: 767px) {
-  .quote-box h3 {
-    font-size: 18px;
-  }
-
-  .stat-number {
-    font-size: 28px;
-  }
-}
-
+/* Custom Accordion / Subject Tree System */
 .term-tabs .nav-link {
   color: #fff !important;
   background-color: rgba(255, 255, 255, 0.1);
@@ -1429,7 +901,6 @@ footer p a:hover {
   border-color: #f5a425;
 }
 
-/* إصلاح هياكل العناوين المخصصة المباشرة لتجنب حظر الـ CSS الافتراضي */
 .custom-main-subject {
   margin-bottom: 15px;
   border-radius: 5px;
@@ -1461,7 +932,6 @@ footer p a:hover {
   border-radius: 0 0 5px 5px;
   padding: 12px;
   display: none;
-  /* يتم التحكم به عبر الـ JS */
 }
 
 .toggle-inner-custom-btn {
@@ -1493,19 +963,358 @@ footer p a:hover {
   padding: 15px !important;
   margin-bottom: 10px !important;
   display: none;
-  /* يتم التحكم به عبر الـ JS */
   text-align: right !important;
   direction: rtl !important;
 }
 
 .custom-inner-body a {
   color: #f5a425 !important;
-  text-decoration: none !important;
-  transition: color 0.2s;
   display: inline-block;
   margin-top: 5px;
 }
 
 .custom-inner-body a:hover {
   color: #fff !important;
+}
+
+/* ==========================================================================
+    إصلاح تنسيقات وألوان قسم التواصل (Contact Section)
+   ========================================================================== */
+/* ==========================================================================
+    تنسيق احترافي ومتناسق لقسم التواصل والخريطة
+   ========================================================================== */
+section.contact {
+  background-color: #172238;
+  padding: 120px 0;
+}
+
+/* تفعيل توحيد الارتفاع للعناصر المتجاورة في الشاشات الكبيرة */
+@media screen and (min-width: 768px) {
+  section.contact .row {
+    display: flex;
+    align-items: stretch;
+    /* يجعل الفورم والخريطة بنفس الارتفاع تماماً */
+  }
+}
+
+section.contact form {
+  background-color: rgba(250, 250, 250, 0.05);
+  padding: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.contact form input,
+section.contact form textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+section.contact form input:focus,
+section.contact form textarea:focus {
+  border-color: #f5a425 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 0 8px rgba(245, 164, 37, 0.2);
+}
+
+section.contact form button.main-button {
+  background-color: #f5a425 !important;
+  color: #fff !important;
+  border: 2px solid transparent !important;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+section.contact form button.main-button:hover {
+  background-color: transparent !important;
+  color: #f5a425 !important;
+  border-color: #f5a425 !important;
+}
+
+/* ضبط صندوق الخريطة ليطابق أبعاد الفورم */
+#map {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(250, 250, 250, 0.05);
+  padding: 0;
+  /* أزلنا الحشوة الداخلية لملء المساحة بشكل مثالي */
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+}
+
+#map iframe {
+  display: block;
+}
+
+/* ==========================================================================
+    Media Queries (Combined & Cleaned)
+   ========================================================================== */
+@media screen and (max-width: 1180px) {
+  .main-banner .caption h2 {
+    font-size: 58px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .main-header .logo {
+    padding-right: 30px !important;
+  }
+
+  .main-menu {
+    padding-left: 30px !important;
+  }
+
+  .main-menu li {
+    margin-right: 5px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section.about-us {
+    padding: 80px 0 40px 0;
+  }
+
+  .about-content {
+    min-height: auto;
+  }
+
+  .features {
+    background-color: #0c1228;
+  }
+
+  .features-content {
+    position: relative;
+  }
+
+  .features-post {
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  a.menu-link {
+    float: left;
+    display: block;
+    font-size: 36px;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+
+  .main-header .logo {
+    line-height: 73px;
+  }
+
+  .main-menu {
+    padding: 0 !important;
+  }
+
+  .main-menu li {
+    display: block;
+    line-height: 1;
+    margin-right: 0 !important;
+  }
+
+  .main-menu li .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    width: 100%;
+  }
+
+  nav[role="navigation"] {
+    clear: both;
+    transition: all 0.3s ease-out;
+  }
+
+  .js nav[role="navigation"] {
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  nav[role="navigation"].active {
+    max-height: 20em;
+    height: 20em;
+    overflow-y: scroll;
+  }
+
+  nav[role="navigation"] ul {
+    top: 0;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(250, 250, 250, 0.25);
+    background-color: rgba(22, 34, 57, 0.99);
+  }
+
+  nav[role="navigation"] li a {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.25);
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  nav[role="navigation"] li:hover a,
+  nav[role="navigation"] li.active a {
+    color: #f5a425;
+    border: 2px solid transparent;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.25);
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .js nav[role="navigation"] {
+    max-height: none;
+  }
+
+  nav[role="navigation"] li {
+    display: inline-block;
+    margin: 0 0.25em;
+  }
+
+  nav[role="navigation"] li a {
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-banner .caption h2 {
+    font-size: 36px;
+  }
+
+  .features-content {
+    padding: 15px;
+  }
+
+  .features-content h4 i {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .features-content h4 {
+    font-size: 14px;
+  }
+
+  .features-content p {
+    display: none;
+  }
+
+  .features-content p.hidden-sm {
+    display: block;
+  }
+
+  #tabs ul {
+    flex-direction: column;
+  }
+
+  #tabs ul li {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .tabs-content,
+  section.coming-soon .continer h4 {
+    text-align: center;
+  }
+
+  .tabs-content img {
+    padding-left: 0;
+  }
+
+  section.coming-soon .right-content {
+    margin-top: 60px;
+    margin-right: 0;
+  }
+
+  section.video .left-content {
+    margin-bottom: 45px;
+  }
+
+  section.video .first-item .first-content h4,
+  section.video .second-item .second-content h4 {
+    text-align: center;
+  }
+
+  section.contact form {
+    margin-bottom: 30px;
+  }
+
+  .quiz-btn-container {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .custom-quiz-btn {
+    width: 80%;
+  }
+
+  .quote-box h3 {
+    font-size: 18px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
+/* ==========================================================================
+   إلغاء الخط السفلي الافتراضي للروابط في كامل صفحات الموقع
+   ========================================================================== */
+
+/* إلغاء الخط في الحالة العادية، عند التمرير، عند الضغط، وعند التفعيل لكل الروابط */
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* التأكد من تطبيق ذلك على الروابط داخل المواد والمراجع والقوائم */
+.custom-inner-body a,
+.custom-main-body a,
+.tabs-content a,
+section a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* ==========================================================================
+   إلغاء المربع الأبيض الصغير من تحت الأترام فقط والإبقاء عليه في المستويات الكبيرة
+   ========================================================================== */
+
+/* استهداف العـناصر المزيفة (after و before) الخاصة بتبويبات الأترام فقط وتصفيرها */
+.term-tabs .nav-link::after,
+.term-tabs .nav-link::before,
+.term-tabs .nav-item .nav-link.active::after,
+.term-tabs .nav-item .nav-link.active::before {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
